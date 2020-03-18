@@ -1,7 +1,7 @@
 # Day-to-Day-Scripts
 A (limited) collection of small day to day scripts
 
-## [aber-su-log-volunteer-hours](/aber-su-log-volunteer-hours)
+## [aber-su-log-volunteer-hours](/aber-su-log-volunteer-hours/log_hours.py)
 A small Python script to provide an automated solution to logging volunteer hours to the Aberystwyth University Student's Union system. 
 
 Activities are defined in a CSV file and the program automatically submits these using the submission form.
@@ -11,7 +11,7 @@ Submitted hours are placed in a separate file for logging and the original file 
 ![](aber-su-log-volunteer-hours/log_hours_in_use.gif)
 ![](aber-su-log-volunteer-hours/log_hours_in_use_terminal.png)
 
-## [circuit-laundry-availability](/circuit-laundry-availability)
+## [circuit-laundry-availability](/circuit-laundry-availability/get_circuit_laundry_status.py)
 
 Provides a status monitor for Circuit Laundry locations. The availability of washers and dryers is reported back to the user for a given site.
 
@@ -50,6 +50,6 @@ ID 	 Status    	Time Remaining
  15	 available	
 ```
 
-## [hours-minutes-sum](/hours-minutes-sum)
+## [hours-minutes-sum](/hours-minutes-sum/time_sum.py)
 A small Python script to take input of a set number of times in a HH:MM format and sums these together, outputting the resulting time. Utilised for manual time addition.
 
