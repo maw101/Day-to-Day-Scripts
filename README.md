@@ -53,3 +53,12 @@ ID 	 Status    	Time Remaining
 ## [hours-minutes-sum](/hours-minutes-sum/time_sum.py)
 A small Python script to take input of a set number of times in a HH:MM format and sums these together, outputting the resulting time. Utilised for manual time addition.
 
+### Example Output
+```
+$ python3 time_sum.py
+Enter Number of Times to Input (format: HH:MM): 3
+Enter Next Time: 0:59
+Enter Next Time: 0:58
+Enter Next Time: 1:01
+2:58:00
+```
