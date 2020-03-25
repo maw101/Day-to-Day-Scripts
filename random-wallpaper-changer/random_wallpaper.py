@@ -15,7 +15,7 @@ import os, random
 
 ALLOWED_FILETYPES = ['png', 'jpg', 'jpeg']
 
-WALLPAPER_DIRECTORY = '/home/user/Pictures/Wallpapers'
+WALLPAPER_DIRECTORY = ''
 
 def is_valid_directory(path):
 	"""Validates that a given path is a valid directory.
