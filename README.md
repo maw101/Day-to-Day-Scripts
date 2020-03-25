@@ -62,3 +62,8 @@ Enter Next Time: 0:58
 Enter Next Time: 1:01
 2:58:00
 ```
+
+## [random-wallpaper-changer](/random-wallpaper-changer/random_wallpaper.py)
+A Python script to randomly set the wallpaper on Linux from images in a given folder.
+
+Some users may have to run `export GIO_EXTRA_MODULES=/usr/lib/x86_64-linux-gnu/gio/modules/` due to an [issue](https://github.com/conda-forge/glib-feedstock/issues/19) with GSettings backend.
