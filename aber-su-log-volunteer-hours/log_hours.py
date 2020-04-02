@@ -1,19 +1,20 @@
 """Aberystwyth University SU Volunteer Hours Automatic Time Logger.
 
 This module provides an automated solution to logging volunteer hours to the 
-Student's Union system. Activities are defined in a CSV file and the program 
+Students Union system. Activities are defined in a CSV file and the program 
 automatically submits these using the submission form.
 
 Submitted hours are placed in a separate file for logging and the original file 
 is overwritten. Spam prevention is integrated into the project through 
-program pausing for a randomised user-defined time in seconds between form 
-submissions.
+sleeping for a randomised user-defined time in seconds between form submissions.
+
+Requirements:
+	selenium
+	chrome webdriver
 
 Example:
 	$ python3 log_hours.py
-
-Your username must be defined on line 28.
-
+	
 """
 
 import getpass, time, csv, datetime, random
@@ -164,15 +165,18 @@ def uk_date_to_us_format(uk_date):
 	"""
 	return datetime.datetime.strptime(uk_date, '%d/%m/%Y').strftime('%m/%d/%Y')
 
+print("To prevent spamming the SU form, a time delay should be set in between form submissions:")
+TIME_BETWEEN_REQUESTS_LOWER_BOUND = int(input("\tEnter the LOWER BOUND for the number of seconds between form submissions (in seconds): "))
+TIME_BETWEEN_REQUESTS_UPPER_BOUND = int(input("\tEnter the UPPER BOUND for the number of seconds between form submissions (in seconds): "))
 
+# ensure that upper bound is greater than lower bound, can't be equal due to random call
+if TIME_BETWEEN_REQUESTS_UPPER_BOUND <= TIME_BETWEEN_REQUESTS_LOWER_BOUND:
+	TIME_BETWEEN_REQUESTS_UPPER_BOUND = TIME_BETWEEN_REQUESTS_LOWER_BOUND + 1
 
-TIME_BETWEEN_REQUESTS_LOWER_BOUND = int(input("Enter the LOWER BOUND for the number of seconds between form submissions (in seconds): "))
-TIME_BETWEEN_REQUESTS_UPPER_BOUND = int(input("Enter the UPPER BOUND for the number of seconds between form submissions (in seconds): "))
+BROWSER = webdriver.Chrome()
 
-browser = webdriver.Chrome()
-
-browser.get(URL)
+BROWSER.get(URL)
 login_if_required()
 process_csv_hours('hours.csv')
 
-browser.quit()
+BROWSER.quit()
