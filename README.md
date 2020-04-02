@@ -11,6 +11,9 @@ Submitted hours are placed in a separate file for logging and the original file 
 ![](aber-su-log-volunteer-hours/log_hours_in_use.gif)
 ![](aber-su-log-volunteer-hours/log_hours_in_use_terminal.png)
 
+### Requirements
+Selenium, Chrome Webdriver
+
 ## [circuit-laundry-availability](/circuit-laundry-availability/get_circuit_laundry_status.py)
 
 Provides a status monitor for Circuit Laundry locations. The availability of washers and dryers is reported back to the user for a given site.
