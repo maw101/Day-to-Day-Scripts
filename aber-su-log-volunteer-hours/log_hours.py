@@ -36,9 +36,9 @@ def login_if_required():
 	
 	"""
 	try:
-		username_field = browser.find_element_by_name('xip_UniID')
-		password_field = browser.find_element_by_name('xip_Password')
-		login_submit_button = browser.find_element_by_name('xip_datasrc_Volunteer_register')
+		username_field = BROWSER.find_element_by_name('xip_UniID')
+		password_field = BROWSER.find_element_by_name('xip_Password')
+		login_submit_button = BROWSER.find_element_by_name('xip_datasrc_Volunteer_register')
 	except NoSuchElementException:
 		print("It doesn't appear that this is the login page. One or more fields could not be found on the page.")
 		return False
@@ -71,13 +71,13 @@ def add_activity(activity, date, hours, skills_gained='', skills_explanation='')
 	
 	"""
 	try:
-		activity_field = browser.find_element_by_name('InsertRecordVolunteeractivity')
-		date_field = browser.find_element_by_name('InsertRecordDateofactivity')
-		total_hours_field = browser.find_element_by_name('InsertRecordHoursrecorded')
-		skills_gained_field = browser.find_element_by_name('InsertRecordSkills')
-		skills_gained_how_field = browser.find_element_by_name('InsertRecordskills_gained_how')
+		activity_field = BROWSER.find_element_by_name('InsertRecordVolunteeractivity')
+		date_field = BROWSER.find_element_by_name('InsertRecordDateofactivity')
+		total_hours_field = BROWSER.find_element_by_name('InsertRecordHoursrecorded')
+		skills_gained_field = BROWSER.find_element_by_name('InsertRecordSkills')
+		skills_gained_how_field = BROWSER.find_element_by_name('InsertRecordskills_gained_how')
 
-		submit_button = browser.find_element_by_name('Submit')
+		submit_button = BROWSER.find_element_by_name('Submit')
 	except NoSuchElementException:
 		print("One or more fields could not be found on the page")
 		return False
