@@ -1,8 +1,20 @@
 # Aber SU Volunteering Automatic Time Logger
 A small Python script to provide an automated solution to logging volunteer hours to the Aberystwyth University Student's Union system. 
 
-### Requirements
+## Requirements
 Selenium, Chrome Webdriver
+
+## Usage
+
+(NB: Only tested on Linux)
+
+Define all activities in the `hours.csv` file provided.
+
+Run the following on the command line/terminal.
+
+```text
+python3 log_hours.py
+```
 
 ## Providing Activities
 Activities are defined in a CSV file ([hours.csv](hours.csv)) and the program automatically submits these using the submission form. Processed hours are then added to hours_processed.csv and hours.csv is overwritten.
